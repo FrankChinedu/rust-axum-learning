@@ -14,7 +14,6 @@ async fn quick_dev() -> Result<()> {
             "pwd": "welcome"
         }),
     );
-
     req_login.await?.print().await?;
 
     Ok(())
