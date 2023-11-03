@@ -1,4 +1,6 @@
+pub use self::error::{Error, Result};
 mod error;
+mod web;
 
 use axum::{
     extract::{Path, Query},
@@ -14,6 +16,7 @@ use tower_http::services::ServeDir;
 async fn main() {
     let routes_all = Router::new()
         .merge(route_hello())
+        .merge(web::routes_login::routes())
         .fallback_service(route_static());
 
     // region: -
