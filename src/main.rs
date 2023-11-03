@@ -1,5 +1,6 @@
 pub use self::error::{Error, Result};
 mod error;
+mod model;
 mod web;
 
 use axum::{
